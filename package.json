@@ -1,0 +1,49 @@
+{
+  "name": "basic_sass_setup",
+  "version": "1.0.0",
+  "description": "This is a basic setup for a sass project",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "weather_app"
+  },
+  "keywords": [
+    "Gulp",
+    "Sass",
+    "Browserfy"
+  ],
+  "author": "Renato Francia",
+  "license": "Apache-2.0",
+  "devDependencies": {
+    "browser-sync": "^2.14.0",
+    "del": "^2.2.2",
+    "dev-ip": "^1.0.1",
+    "eslint": "^4.7.2",
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^4.0.0",
+    "gulp-cssnano": "^2.1.2",
+    "gulp-eslint": "^4.0.0",
+    "gulp-if": "^2.0.2",
+    "gulp-imagemin": "^3.0.3",
+    "gulp-inject": "^4.3.0",
+    "gulp-jscs": "^4.0.0",
+    "gulp-jshint": "^2.0.4",
+    "gulp-load-plugins": "^1.5.0",
+    "gulp-minify": "0.0.14",
+    "gulp-print": "^2.0.1",
+    "gulp-rename": "^1.2.2",
+    "gulp-uglify": "^2.0.0",
+    "gulp-useref": "^3.1.0",
+    "gulp-util": "^3.0.8",
+    "jshint": "^2.9.5",
+    "jshint-stylish": "^2.2.1",
+    "wiredep": "^4.0.0",
+    "yargs": "^9.0.1"
+  },
+  "dependencies": {
+    "gulp-sass": "^3.1.0"
+  }
+}

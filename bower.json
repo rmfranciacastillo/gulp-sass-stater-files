@@ -1,0 +1,32 @@
+{
+  "name": "basic_sass_setup",
+  "description": "This is a basic setup for a sass project",
+  "main": "index.js",
+  "authors": [
+    "Renato Francia"
+  ],
+  "license": "Apache-2.0",
+  "keywords": [
+    "Gulp",
+    "Sass",
+    "Browserfy"
+  ],
+  "homepage": "https://github.com/rmfranciacastillo/gulp-stater-files",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "app/libraries",
+    "test",
+    "tests"
+  ],
+  "devDependencies": {
+    "reset.scss": "^1.0.1",
+    "bootstrap": "^3.3.7"
+  },
+  "dependencies": {
+    "reset.scss": "^1.0.1",
+    "bootstrap": "^3.3.7"
+  }
+}
