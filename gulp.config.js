@@ -28,7 +28,11 @@ module.exports = function(){
 		],
 		allimages: [
 			client + 'img/*'
-		],	
+		],
+		videos: [
+			client + 'videos/*'
+		],
+
 		templates: [
 			client + '*.html',
 			client + 'templates/*.html'

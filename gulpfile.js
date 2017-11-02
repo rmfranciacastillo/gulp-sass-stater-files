@@ -168,7 +168,13 @@ gulp.task('images', () => {
 		.pipe($.imagemin())
 		.pipe(gulp.dest(config.temp +'img'));
 });
- 
+
+// Handle Videos
+gulp.task('videos', () => {
+    return gulp.src(config.videos)
+        .pipe(gulp.dest(config.temp+'video'));
+});
+
 //browserSync
 gulp.task('browsersync', () => {
 	startBrowserSync();
@@ -191,6 +197,7 @@ gulp.task('watch', ['browsersync'], () => {
 //Default 
 gulp.task('default', [  'useref',
 						'images',
+                        'videos',
 						'watch'], () => {
 	console.log('Finished Loading');	
 });
