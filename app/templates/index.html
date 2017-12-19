@@ -5,8 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <title>Gulp Sass</title>
-    <link href="img/favicon.png" rel="icon" type="image/png">
-	
+    <link href="img/logo.png" rel="icon" type="image/png">
+
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
     <!-- build:css css/lib.min.css-->
 	<!-- bower:css -->
 	<!-- endbower --> 
@@ -17,13 +19,16 @@
 </head>
 <body>
     <header class="l-header container">
+		<!-- Background Video --> 
         <div class="fullscreen-video-wrap">
             <video src="video/code.mp4" autoplay="true" loop="true"></video>
         </div>
         <div class="header-overlay"></div>
-        <nav class="main-nav">
-            <span class="logo"><img src="" alt="LOGO"></span>
-            <ul class="main-menu">
+
+		<!-- Main Navigation --> 
+        <nav class="main-nav ">
+            <span class="logo "><h3>LOGO</h3></span>
+            <ul class="main-menu ">
                 <li class="menu-item"><a href="#">Services</a></li>
                 <li class="menu-item"><a href="#">Work</a></li>
                 <li class="menu-item"><a href="#">About Me</a></li>
@@ -31,6 +36,32 @@
                 <li class="menu-item"><a href="#">Contact</a></li>
             </ul>
         </nav>
+		
+	   <!--Mobile Navigation -->
+       <div class="mobile-navigation ">
+          <i class="fa fa-bars nav-toggle" id="mobile-open"></i>
+          <nav class="main-navigation" id="mobile-menu" role="navigation">
+            <span class="nav-toggle" id="mobile-close">X</span>
+            <ul>
+                <li><a href="#portfolio">Portfolio</a></li>
+                <li><a href="#news">News</a></li>
+                <li><a href="#about">About Me</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li>
+                    <ul class="social-links">
+                        <h5>Follow Us:</h5>
+                        <li><a htarget="_blank" ref="https://www.facebook.com/The.Creative.Process.Be.Creative"><i class="fa fa-facebook-official"></i></a></li>
+                        <li><a htarget="_blank" ref="https://twitter.com/RenatoFranciaC"><i class="fa fa-twitter-square"></i></a></li>
+                        <li><a htarget="_blank" ref="https://www.instagram.com/renatofrancia/"><i class="fa fa-instagram"></i></a></li>
+                        <li><a htarget="_blank" ref="https://www.linkedin.com/in/renatofrancia"><i class="fa fa-linkedin-square"></i></a></li>
+                        <li><a htarget="_blank" ref="https://github.com/rmfranciacastillo"><i class="fa fa-github-square"></i></a></li>
+                        <li><a htarget="_blank" ref="http://www.thecreativeprocess.co"><i class="fa fa-globe"></i></a></li>
+                    </ul>
+                </li>
+            </ul>
+          </nav>
+        </div>
+
         <div class="header-content text-md-center">
             <h1>Welcome Everyone</h1>
             <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Id temporibus perferendis necessitatibus numquam amet impedit explicabo? Debitis quasi ullam aperiam!</p>

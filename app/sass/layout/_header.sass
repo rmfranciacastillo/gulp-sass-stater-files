@@ -5,12 +5,13 @@
 .l-header 
     height: 100vh
     display: flex
-    flex-direction: row
+    flex-direction: column 
     align-items: center
+    justify-content: center 
     color: $white 
 
 .container
-  	max-width: 960px
+  	max-width: 100%  
   	padding-left: 1rem
   	padding-right: 1rem
   	margin: auto
@@ -41,15 +42,32 @@
 
 // Navigation
 .main-nav
-    align-self: baseline
+    position: absolute
+    top: 0
     z-index: 2
-    width: 100%
+    width: 70% 
+    padding: 30px
 
+    .logo
+        display: inline-block
+        float: left
     .main-menu
-        li
-            display: inline-block
-        
-      
+        display: inline-block
+        float: right 
+        .menu-item
+            display: inline-block 
+            list-style: none
+            padding-right: 5px
+            padding-left: 5px
+            a
+                text-decoration: none
+                color: $white 
+                font-weight: 700
+                transition: 0.15s linear 
+
+                &:hover
+                    border-bottom: 2px solid $white 
+                    padding-bottom: 5px 
 
 // Header Content
 .header-content
@@ -71,3 +89,25 @@
   	font-size: 1.2rem
   	padding: 1rem 2rem
   	text-decoration: none
+
+// Laptop
+@media (max-width: 1080px)
+	.main-nav
+		width: 80%
+
+// Tablet 
+@media (max-width: 800px)
+	.main-nav
+		width: 100%
+
+// Mobile Vertical 
+@media only screen and (max-width: 480px) 
+	
+	.fullscreen-video-wrap
+		background: url(../../img/background.jpg)
+		background-size: cover 
+
+		video
+			display: none
+	.main-nav
+		display: none

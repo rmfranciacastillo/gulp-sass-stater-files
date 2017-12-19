@@ -11,7 +11,6 @@ const del    = require('del');
 const browserSync  = require('browser-sync');
 const devip = require('dev-ip');
 
-
 const $ = require('gulp-load-plugins')({ lazy:true });
 
 /******************************
