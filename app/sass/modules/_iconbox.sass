@@ -1,0 +1,39 @@
+/* ==|====================
+   Module/IconBox
+ ======================= */
+
+.iconbox-list
+	list-style: none 
+
+.iconbox-item
+	
+	margin-top: 50px 
+	margin-bottom: 50px
+	text-align: center
+
+	i 
+		font-size: 3rem
+		color: $main
+	h3
+		margin: 15px
+
+// Tablet 
+@media only screen and (min-width: 800px) 
+	.iconbox-item
+		p
+			width: 60%
+			margin: 0 auto
+
+// Laptop
+@media (min-width: 1080px)
+	.iconbox-list
+		margin: 0 auto
+		width: 70%
+		display: flex
+		flex-direction: row
+		align-items: center
+		justify-content: space-between
+
+	.iconbox-item
+		display: inline-block
+		width: 40%

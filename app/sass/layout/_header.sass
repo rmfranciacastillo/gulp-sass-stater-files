@@ -10,12 +10,6 @@
     justify-content: center 
     color: $white 
 
-.container
-  	max-width: 100%  
-  	padding-left: 1rem
-  	padding-right: 1rem
-  	margin: auto
-  	text-align: center
 
 // Video menu 
 .fullscreen-video-wrap
@@ -115,3 +109,14 @@
 	
 	.header-content
 		width: 100%
+
+// Mobile Landscape
+
+@media only screen and (min-device-width: 480px) and (max-device-width: 640px) and (orientation: landscape) 
+
+	.header-content
+		margin-top: 60px 
+		h1
+			font-size: 35px
+		p
+			font-size: 1.2rem
