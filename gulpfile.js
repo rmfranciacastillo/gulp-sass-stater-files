@@ -1,9 +1,8 @@
 /************************************
  *									*
- *		GULP SASS CONFIG V.1		*
+ *		GULP SASS CONFIG V1.0.0		*
  *									*
  ************************************/ 
-
 const gulp	 = require('gulp'); 
 const args	 = require('yargs').argv;
 const config = require('./gulp.config')();
@@ -136,6 +135,14 @@ gulp.task('useref', [ 'inject:js', 'inject:css'], () => {
 		}));
 });
 
+// Template Setup
+gulp.task('templates', () =>{
+	log('Setting up template');
+
+	return gulp.src('./app/templates/*.html')
+		.pipe(gulp.dest('./.tmp/'));
+}); 
+
 //Compress Images
 gulp.task('images', () => {
 	return gulp.src(config.allimages)
@@ -169,11 +176,13 @@ gulp.task('watch', ['browsersync'], () => {
 });
 
 //Default 
-gulp.task('default', [  'useref',
+gulp.task('default', [  'templates', 
+						'useref',
 						'images',
                         'videos',
-						'watch'], () => {
-	console.log('Finished Loading');	
+						'watch'], 
+	() => {
+		console.log('Finished Loading');	
 });
 
 
@@ -194,7 +203,7 @@ function startBrowserSync() {
 
     var options = {
 		host: devip()[0],
-       port: 3000,
+		port: 3000,
        files: [
           	config.client + '**/*.*',   
           	config.temp + '**/*.css'
