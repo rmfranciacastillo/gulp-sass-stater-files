@@ -29,6 +29,7 @@ gulp
 ### And coding style tests
 
 SMACSS: https://smacss.com
+
 Javascript: https://google.github.io/styleguide/jsguide.html
 
 
