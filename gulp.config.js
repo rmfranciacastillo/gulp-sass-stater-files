@@ -36,35 +36,9 @@ module.exports = function(){
 		templates: [
 			client + '*.html',
 			client + 'templates/*.html'
-		],			
-	
-		/*
-		 *	Bower and NPM locations 
-		 */
-		bower: {
-			json: require('./bower.json'),
-			directory: './bower_components',
-			ignorePath: '../..'
-		}
+		]			
 	};
 
-	config.getWiredepDefaultOptions = function(){
-
-		var options = {
-
-			bowerJson: config.bower.json,
-			directory: config.bower.directory,
-			ignorePath: config.bower.ignorePath,
-			fileTypes: {
-				html: {
-					replace: {
-						css: '<link rel="stylesheet" stuff href="{{filePath}}" />'
-					}
-				}
-			}
-		};
-		return options; 	
-	};
 
 	return config; 
 };

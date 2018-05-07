@@ -1,6 +1,6 @@
 {
   "name": "basic_sass_setup",
-  "version": "1.0.0",
+  "version": "1.0.0-alpha",
   "description": "This is a basic setup for a sass project",
   "main": "index.js",
   "scripts": {
@@ -40,11 +40,9 @@
     "gulp-util": "^3.0.8",
     "jshint": "^2.9.5",
     "jshint-stylish": "^2.2.1",
-    "wiredep": "^4.0.0",
     "yargs": "^9.0.1"
   },
   "dependencies": {
-    "bootstrap": "^3.3.7",
     "gulp-sass": "^3.1.0"
   }
 }

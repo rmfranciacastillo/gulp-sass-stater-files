@@ -35,31 +35,6 @@ gulp.task('clean:temp', () => {
 	return del.sync(config.temp);
 });
 
-// Adding bower components js and css
-gulp.task('wiredep', () => {
-	const wiredep = require('wiredep').stream;
-	const options = config.getWiredepDefaultOptions;
-
-	log('Getting all the css and js from bower components into html ');
- 	
-	return gulp
-		.src(config.templates)
-		.pipe(wiredep({
-			ignorePath: '../..',
-			fileTypes: {
-				html: {
-					block: /(([ \t]*)<!--\s*bower:*(\S*)\s*-->)(\n|\r|.)*?(<!--\s*endbower\s*-->)/gi,
-					replace: {
-						css: '<link rel="stylesheet" href="..{{filePath}}" />',
-						js: '<script src="..{{filePath}}"></script>'
-					}
-				}
-			}
-
-		}))
-		.pipe(gulp.dest(config.temp));
-});
-
 // Compiling SASS 
 // Because of the SMACSS structure we will only be compiling index.sass 
 gulp.task('sass', ['clean:sass'], () => {
@@ -150,7 +125,7 @@ gulp.task('inject:js', ['scripts'], () => {
 });
 
 //Useref
-gulp.task('useref', ['wiredep', 'inject:js', 'inject:css'], () => {
+gulp.task('useref', [ 'inject:js', 'inject:css'], () => {
 	log('Compiling the libraries paths for the templates in temp' );
 
 	return gulp.src('./.tmp/*.html')
@@ -222,8 +197,7 @@ function startBrowserSync() {
        port: 3000,
        files: [
           	config.client + '**/*.*',   
-          	config.temp + '**/*.css',
-		  	'./bower_components/**/*.*'
+          	config.temp + '**/*.css'
        ],
        ghostMode: {
           clicks: true,

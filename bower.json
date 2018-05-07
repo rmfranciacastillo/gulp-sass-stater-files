@@ -22,11 +22,9 @@
     "tests"
   ],
   "devDependencies": {
-    "reset.scss": "^1.0.1",
-    "bootstrap": "^3.3.7"
+    "reset.scss": "^1.0.1"
   },
   "dependencies": {
-    "reset.scss": "^1.0.1",
-    "bootstrap": "^3.3.7"
+    "reset.scss": "^1.0.1"
   }
 }
