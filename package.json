@@ -1,14 +1,14 @@
 {
-  "name": "basic_sass_setup",
-  "version": "1.0.0-alpha",
-  "description": "This is a basic setup for a sass project",
+  "name": "Gulp SMACSS starter ",
+  "version": "1.0.1",
+  "description": "A simple Sass starter file for developing Templates",
   "main": "index.js",
   "scripts": {
     "test": "test"
   },
   "repository": {
     "type": "git",
-    "url": "weather_app"
+    "url": "https://github.com/rmfranciacastillo/gulp-sass-stater-files"
   },
   "keywords": [
     "Gulp",
