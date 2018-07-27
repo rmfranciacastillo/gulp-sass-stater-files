@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/rmfranciacastillo/gulp-sass-stater-files.svg?branch=master)](https://travis-ci.org/rmfranciacastillo/gulp-sass-stater-files)
+
 # Gulp Sass + SMACSS starter file
 
 A simple Gulp starter file for creating templates
