@@ -1,14 +1,14 @@
 {
-  "name": "Gulp SMACSS starter ",
-  "version": "1.0.1",
-  "description": "A simple Sass starter file for developing Templates",
+  "name": "basic_sass_setup",
+  "version": "1.0.0-alpha",
+  "description": "This is a basic setup for a sass project",
   "main": "index.js",
   "scripts": {
     "test": "test"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/rmfranciacastillo/gulp-sass-stater-files"
+    "url": "weather_app"
   },
   "keywords": [
     "Gulp",
@@ -22,6 +22,7 @@
     "del": "^2.2.2",
     "dev-ip": "^1.0.1",
     "eslint": "^4.7.2",
+    "eslint-config-freecodecamp": "^1.1.1",
     "gulp": "^3.9.1",
     "gulp-autoprefixer": "^4.0.0",
     "gulp-cssnano": "^2.1.2",
@@ -30,7 +31,6 @@
     "gulp-imagemin": "^3.0.3",
     "gulp-inject": "^4.3.0",
     "gulp-jscs": "^4.0.0",
-    "gulp-jshint": "^2.0.4",
     "gulp-load-plugins": "^1.5.0",
     "gulp-minify": "0.0.14",
     "gulp-print": "^2.0.1",

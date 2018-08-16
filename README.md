@@ -1,5 +1,3 @@
-[![Build Status](https://travis-ci.org/rmfranciacastillo/gulp-sass-stater-files.svg?branch=master)](https://travis-ci.org/rmfranciacastillo/gulp-sass-stater-files)
-
 # Gulp Sass + SMACSS starter file
 
 A simple Gulp starter file for creating templates
@@ -8,6 +6,7 @@ A simple Gulp starter file for creating templates
 
 ```
 npm v5.6.0+
+bower v1.8.2
 ```
 
 ### Installing
@@ -16,6 +15,7 @@ npm v5.6.0+
 git clone https://github.com/rmfranciacastillo/gulp-sass-stater-files.git
 cd gulp-sass-stater-files
 npm install 
+bower install 
 ```
 
 ### Run

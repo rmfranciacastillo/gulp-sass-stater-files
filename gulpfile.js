@@ -1,28 +1,20 @@
-/************************************
- *									*
- *		GULP SASS CONFIG V1.0.0		*
- *									*
- ************************************/ 
-const gulp	 = require('gulp'); 
-const args	 = require('yargs').argv;
+/* GULP SASS CONFIG V1.0.0 */
+
+const gulp = require('gulp');
+const args = require('yargs').argv;
 const config = require('./gulp.config')();
-const del    = require('del');
-const browserSync  = require('browser-sync');
+const del = require('del');
+const browserSync = require('browser-sync');
 const devip = require('dev-ip');
+const $ = require('gulp-load-plugins')({lazy: true});
 
-const $ = require('gulp-load-plugins')({ lazy:true });
-
-/******************************
- *	    	Tasks 
- ******************************/
-
-//clean dist
+/* clean dist */
 gulp.task('clean:dist', () => {
 	log('Cleaning Distribution folder');
 	return del.sync('dist');
 });
 
-//clean Sass-generated css 
+//clean Sass-generated css
 gulp.task('clean:sass', () => {
 	log('Cleaning generated css');
 	return del.sync(config.tempSass);
@@ -78,13 +70,6 @@ gulp.task('vet', () => {
 
 	gulp.src(config.alljs)
 		.pipe($.if(args.verbose, $.print()))  //gulp vet --verbose
-		.pipe($.jshint())
-		.pipe($.jshint.reporter(
-			'jshint-stylish', 
-			{ 
-				verbose: true 
-			}))
-		.pipe($.jshint.reporter('fail'));
 });
 
 // lint scripts
@@ -171,7 +156,7 @@ gulp.task('watch', ['browsersync'], () => {
 	gulp.watch(config.alljs, ['inject:js'], browserSync.reload);
 	
 	//HTML
-	gulp.watch(config.templates, ['useref'], browserSync.reload);
+	gulp.watch(config.templates, ['templates', 'useref'], browserSync.reload);
 
 });
 

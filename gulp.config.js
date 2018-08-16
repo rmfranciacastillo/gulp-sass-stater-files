@@ -1,18 +1,16 @@
-/*******************************
- *		GULP Basic config 	   *	
- *******************************/
+/* GULP Basic config */
 
-module.exports = function(){
+module.exports = function() {
 	var client = './app/';
-	var temp  = './.tmp/';	
+	var temp = './.tmp/';
 
 	var config = {
 
 		/*
 		 *	File paths
 		 */
-		temp: temp,	
-		tempSass: temp + 'css/',	
+		temp: temp,
+		tempSass: temp + 'css/',
 		tempTemplates: temp + 'templates/',
 		tempJs: temp + 'js/',
 		alljs: [
@@ -36,8 +34,8 @@ module.exports = function(){
 		templates: [
 			client + '*.html',
 			client + 'templates/*.html'
-		]			
+		]
 	};
 
-	return config; 
+	return config;
 };
