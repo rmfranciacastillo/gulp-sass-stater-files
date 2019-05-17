@@ -1,13 +1,19 @@
 'user strict';
 
+const { 
+  series, 
+  parallel, 
+  src, 
+  dest, 
+  watch 
+} = require('gulp');
+
 // Load Plugins
-const gulp = require('gulp');
-const sass = require('gulp-sass');
+const del = require('del'); 
 const babel = require('gulp-babel');
 const uglify = require('gulp-uglify');
 const rename = require('gulp-rename');
-
-const { series, parallel, src, dest } = require('gulp');
+const sass = require('gulp-sass');
 
 // Config
 const { config }= require('./gulp.config');
@@ -20,18 +26,12 @@ function js() {
     }))
     .pipe(uglify())
     .pipe(rename({ extname: '.min.js' }))
-    .pipe(gulp.dest('build'));
+    .pipe(dest('_build'));
 }
 
-// clean 
+// clean build 
 function clean(cb) {
-  cb();
-}
-
-// Default task
-function defaultTask(cb) {
-  // place code for your default task here
-  cb();
+  return del(["./_build"]);
 }
 
 // CSS Task 
@@ -39,9 +39,9 @@ function css(cb) {
   cb();
 }
 
-exports.js = js;
+exports.css = css;
 exports.build = parallel(css, js); 
-exports.default = series(clean, parallel(css, js), defaultTask);
+exports.default = series(clean, parallel(css, js));
 
 /*
 const { series, parallel } = require('gulp');
