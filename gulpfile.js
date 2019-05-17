@@ -10,12 +10,17 @@ const {
 
 // Load Plugins
 const fs = require('fs');
-const del = require('del'); 
+const del = require('del');
+const cssnano = require('cssnano');
+const autoprefixer = require('autoprefixer');
+
+// Gulp Plugins
 const babel = require('gulp-babel');
 const uglify = require('gulp-uglify');
 const rename = require('gulp-rename');
 const sass = require('gulp-sass');
 const plumber = require('gulp-plumber');
+const postcss = require('gulp-postcss');
 
 // Config
 const { config }= require('./gulp.config');
@@ -40,9 +45,16 @@ function clean(cb) {
 
 // CSS Task 
 function css() {
+  
+  const processors = [
+    autoprefixer(),
+    cssnano(),
+  ];
+
   return src(config.allsass)
     .pipe(plumber())
     .pipe(sass().on('error', sass.logError))
+    .pipe(postcss(processors))
     .pipe(rename({ extname: '.min.css' }))
     .pipe(dest('./_build/assets'))
 }
