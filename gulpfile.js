@@ -1,11 +1,10 @@
 'user strict';
 
-const { 
-  series, 
-  parallel, 
-  src, 
-  dest, 
-  watch 
+const {
+  series,
+  parallel,
+  src,
+  dest,
 } = require('gulp');
 
 // Load Plugins
@@ -23,7 +22,7 @@ const plumber = require('gulp-plumber');
 const postcss = require('gulp-postcss');
 
 // Config
-const { config }= require('./gulp.config');
+const { config } = require('./gulp.config');
 
 sass.compiler = require('node-sass');
 
@@ -31,21 +30,20 @@ sass.compiler = require('node-sass');
 function js() {
   return src(config.alljs)
     .pipe(babel({
-      presets: ['@babel/env'] 
+      presets: ['@babel/env'],
     }))
     .pipe(uglify())
     .pipe(rename({ extname: '.min.js' }))
     .pipe(dest('./_build/assets'));
 }
 
-// clean build 
-function clean(cb) {
-  return del(["./_build"]);
+// clean build
+function clean() {
+  return del(['./_build']);
 }
 
-// CSS Task 
+// CSS Task
 function css() {
-  
   const processors = [
     autoprefixer(),
     cssnano(),
@@ -56,66 +54,17 @@ function css() {
     .pipe(sass().on('error', sass.logError))
     .pipe(postcss(processors))
     .pipe(rename({ extname: '.min.css' }))
-    .pipe(dest('./_build/assets'))
+    .pipe(dest('./_build/assets'));
 }
 
-function renameSassFolder (done) {
+function renameSassFolder(done) {
   fs.rename('./_build/assets/sass', './_build/assets/css', (err) => {
     if (err) throw err;
     done();
-  }); 
+  });
 }
 
 const cssTask = series(css, renameSassFolder);
 
-exports.build = parallel(css, js); 
+exports.build = parallel(css, js);
 exports.default = series(clean, parallel(cssTask, js));
-
-/*
-const { series, parallel } = require('gulp');
-
-function clean(cb) {
-  // body omitted
-  cb();
-}
-
-function cssTranspile(cb) {
-  // body omitted
-  cb();
-}
-
-function cssMinify(cb) {
-  // body omitted
-  cb();
-}
-
-function jsTranspile(cb) {
-  // body omitted
-  cb();
-}
-
-function jsBundle(cb) {
-  // body omitted
-  cb();
-}
-
-function jsMinify(cb) {
-  // body omitted
-  cb();
-}
-
-function publish(cb) {
-  // body omitted
-  cb();
-}
-
-exports.build = series(
-  clean,
-  parallel(
-    cssTranspile,
-    series(jsTranspile, jsBundle)
-  ),
-  parallel(cssMinify, jsMinify),
-  publish
-);
-*/

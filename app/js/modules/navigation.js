@@ -1,3 +1,3 @@
-const sampleModuleMethod = () => console.log(`Module method`);
+const sampleModuleMethod = () => 'Module method';
 
 exports.sampleModuleMethod = sampleModuleMethod;

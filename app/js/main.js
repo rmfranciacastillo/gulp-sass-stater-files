@@ -1,1 +1,3 @@
-const sampleFunction = () => console.log('Hello World!');
+const sampleFunction = () => 'Hello World!';
+
+exports.sampleFunction = sampleFunction;
