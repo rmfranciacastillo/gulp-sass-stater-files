@@ -43,21 +43,13 @@ function css() {
   return src(config.allsass)
     .pipe(plumber())
     .pipe(sass().on('error', sass.logError))
-    .pipe(rename({ extname: '.min.css' }))
     .pipe(dest('./_build/assets'))
 }
 
-function renameSassFolder (done) {
-  fs.rename('./_build/assets/sass', './_build/assets/css', (err) => {
-    if (err) throw err;
-    done();
-  }); 
-}
 
-const cssTask = series(css, renameSassFolder);
-
+exports.css = css;
 exports.build = parallel(css, js); 
-exports.default = series(clean, parallel(cssTask, js));
+exports.default = series(clean, parallel(css, js));
 
 /*
 const { series, parallel } = require('gulp');

@@ -25,6 +25,7 @@
     "eslint-config-airbnb-base": "^13.1.0",
     "gulp": "^4.0.2",
     "gulp-babel": "^8.0.0",
+    "gulp-plumber": "^1.2.1",
     "gulp-rename": "^1.4.0",
     "gulp-sass": "^4.0.2",
     "gulp-uglify": "^3.0.2",
