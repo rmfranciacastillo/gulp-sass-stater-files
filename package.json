@@ -1,14 +1,14 @@
 {
   "name": "basic_sass_setup",
-  "version": "1.0.0-alpha",
-  "description": "This is a basic setup for a sass project",
-  "main": "index.js",
+  "version": "1.0.0",
+  "description": "This is a basic setup for a sass project. This project was only intended for the creation of templates made with simple HTML5, CSS3 and VanillaJS",
+  "main": "app/templates/index.html",
   "scripts": {
-    "test": "test"
+    "start": "gulp"
   },
   "repository": {
     "type": "git",
-    "url": "weather_app"
+    "url": "https://github.com/rmfranciacastillo/gulp-sass-stater-files"
   },
   "keywords": [
     "Gulp",
@@ -18,32 +18,16 @@
   "author": "Renato Francia",
   "license": "Apache-2.0",
   "devDependencies": {
-    "browser-sync": "^2.14.0",
-    "del": "^2.2.2",
-    "dev-ip": "^1.0.1",
-    "eslint": "^4.7.2",
-    "eslint-config-freecodecamp": "^1.1.1",
-    "gulp": "^3.9.1",
-    "gulp-autoprefixer": "^4.0.0",
-    "gulp-cssnano": "^2.1.2",
-    "gulp-eslint": "^4.0.0",
-    "gulp-if": "^2.0.2",
-    "gulp-imagemin": "^3.0.3",
-    "gulp-inject": "^4.3.0",
-    "gulp-jscs": "^4.0.0",
-    "gulp-load-plugins": "^1.5.0",
-    "gulp-minify": "0.0.14",
-    "gulp-print": "^2.0.1",
-    "gulp-rename": "^1.2.2",
-    "gulp-uglify": "^2.0.0",
-    "gulp-useref": "^3.1.0",
-    "gulp-util": "^3.0.8",
-    "jshint": "^2.9.5",
-    "jshint-stylish": "^2.2.1",
-    "yargs": "^9.0.1"
+    "@babel/core": "^7.4.4",
+    "@babel/preset-env": "^7.4.4",
+    "eslint": "^5.16.0",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "gulp": "^4.0.2",
+    "gulp-babel": "^8.0.0",
+    "gulp-rename": "^1.4.0",
+    "gulp-sass": "^4.0.2",
+    "gulp-uglify": "^3.0.2",
+    "node-sass": "^4.12.0"
   },
-  "dependencies": {
-    "gulp-sass": "^3.1.0",
-    "natives": "^1.1.6"
-  }
+  "dependencies": {}
 }

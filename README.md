@@ -6,7 +6,6 @@ A simple Gulp starter file for creating templates
 
 ```
 npm v5.6.0+
-bower v1.8.2
 ```
 
 ### Installing
@@ -15,7 +14,6 @@ bower v1.8.2
 git clone https://github.com/rmfranciacastillo/gulp-sass-stater-files.git
 cd gulp-sass-stater-files
 npm install 
-bower install 
 ```
 
 ### Run
