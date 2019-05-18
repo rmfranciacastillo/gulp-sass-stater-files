@@ -29,11 +29,13 @@
     "eslint-plugin-import": "^2.17.2",
     "gulp": "^4.0.2",
     "gulp-babel": "^8.0.0",
+    "gulp-inject": "^5.0.2",
     "gulp-plumber": "^1.2.1",
     "gulp-postcss": "^8.0.0",
     "gulp-rename": "^1.4.0",
     "gulp-sass": "^4.0.2",
     "gulp-uglify": "^3.0.2",
+    "gulp-useref": "^3.1.6",
     "husky": "^2.3.0",
     "lint-staged": "^8.1.7",
     "node-sass": "^4.12.0"
@@ -41,7 +43,7 @@
   "dependencies": {},
   "lint-staged": {
     "*.js": [
-      "eslint --fix",
+      "eslint --fix gulpfile.js ./app/js/**/*.js",
       "git add"
     ]
   },

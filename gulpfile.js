@@ -14,6 +14,8 @@ const cssnano = require('cssnano');
 const autoprefixer = require('autoprefixer');
 
 // Gulp Plugins
+const useref = require('gulp-useref');
+const inject = require('gulp-inject');
 const babel = require('gulp-babel');
 const uglify = require('gulp-uglify');
 const rename = require('gulp-rename');
@@ -26,6 +28,27 @@ const { config } = require('./gulp.config');
 
 sass.compiler = require('node-sass');
 
+// clean build
+function clean() {
+  return del(['./_build']);
+}
+
+// HTML tasks
+function userefTask() {
+  return src(config.alltemplates)
+    .pipe(useref())
+    .pipe(dest('./_build'));
+}
+
+function injectTask() {
+  const target = src(config.buildtemplates);
+  const sources = src([config.buildjs, config.buildcss], { read: false });
+
+  return target
+    .pipe(inject(sources))
+    .pipe(dest('./_build'));
+}
+
 // JS task
 function js() {
   return src(config.alljs)
@@ -35,11 +58,6 @@ function js() {
     .pipe(uglify())
     .pipe(rename({ extname: '.min.js' }))
     .pipe(dest('./_build/assets'));
-}
-
-// clean build
-function clean() {
-  return del(['./_build']);
 }
 
 // CSS Task
@@ -65,6 +83,8 @@ function renameSassFolder(done) {
 }
 
 const cssTask = series(css, renameSassFolder);
+const htmlTask = series(userefTask, injectTask);
 
+exports.html = htmlTask;
 exports.build = parallel(css, js);
-exports.default = series(clean, parallel(cssTask, js));
+exports.default = series(clean, parallel(cssTask, js), htmlTask);

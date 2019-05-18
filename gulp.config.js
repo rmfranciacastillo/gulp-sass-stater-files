@@ -1,51 +1,26 @@
 /* GULP Basic config */
 const client = './app/';
-const build = './build/';
+const build = './_build/';
 
 const config = {
   /*
-   * File Paths
+   * Source Paths
    */
-  alljs: client + '**/*.js',
-  allsass: client + '**/*.sass',
+  alljs: `${client}**/*.js`,
+  allsass: `${client}**/*.sass`,
+  alltemplates: `${client}**/*.html`,
+  alltimages: `${client}img/*`,
+  alltvideos: `${client}videos/*`,
+  /*
+   * Build Paths
+   */
+  buildtemplates: `${build}**/*.html`,
+  buildjs: `${build}assets/**/*.js`,
+  buildcss: `${build}assets/**/*.css`,
 };
 
 module.exports = {
   client,
   build,
   config,
-}; 
-
-//module.exports = function() {
-
-	//var config = {
-
-		/*
-		 *	File paths
-		 */
-		//tempSass: temp + 'css/',
-		//tempTemplates: temp + 'templates/',
-		//tempJs: temp + 'js/',
-		//alljs: client + '**/*.js',
-		//allcss: [
-			//client + 'css/*.css'
-		//],
-		//sass: [
-			//client + 'sass/*.sass',
-			//client + 'sass/**/*.sass'
-		//],
-		//allimages: [
-			//client + 'img/*'
-		//],
-		//videos: [
-			//client + 'videos/*'
-		//],
-
-		//templates: [
-			//client + '*.html',
-			//client + 'templates/*.html'
-		//]
-	//};
-
-	//return config;
-//};
+};
