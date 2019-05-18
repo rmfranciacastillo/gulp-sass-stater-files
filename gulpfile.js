@@ -5,6 +5,7 @@ const {
   parallel,
   src,
   dest,
+  watch,
 } = require('gulp');
 
 // Load Plugins
@@ -31,6 +32,16 @@ sass.compiler = require('node-sass');
 // clean build
 function clean() {
   return del(['./_build']);
+}
+
+// clean build:css
+function cleanBuildCSS() {
+  return del(['./_build/assets/css']);
+}
+
+// clean build:js
+function cleanBuildJS() {
+  return del(['./_build/assets/js']);
 }
 
 // HTML tasks
@@ -82,9 +93,15 @@ function renameSassFolder(done) {
   });
 }
 
+function watchFiles() {
+  watch(config.allsass, series(cleanBuildCSS, css, renameSassFolder));
+  watch(config.alljs, series(cleanBuildJS, js));
+}
+
+const watchTask = parallel(watchFiles);
 const cssTask = series(css, renameSassFolder);
 const htmlTask = series(userefTask, injectTask);
 
 exports.html = htmlTask;
 exports.build = parallel(css, js);
-exports.default = series(clean, parallel(cssTask, js), htmlTask);
+exports.default = series(clean, parallel(cssTask, js), htmlTask, watchTask);
