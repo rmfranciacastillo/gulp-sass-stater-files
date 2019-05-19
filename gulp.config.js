@@ -8,7 +8,7 @@ const config = {
    */
   alljs: `${client}**/*.js`,
   allsass: `${client}**/*.sass`,
-  alltemplates: `${client}**/*.html`,
+  alltemplates: `${client}templates/*.html`,
   alltimages: `${client}img/*`,
   alltvideos: `${client}videos/*`,
   /*

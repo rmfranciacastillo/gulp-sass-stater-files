@@ -13,6 +13,7 @@ const fs = require('fs');
 const del = require('del');
 const cssnano = require('cssnano');
 const autoprefixer = require('autoprefixer');
+const browsersync = require('browser-sync').create();
 
 // Gulp Plugins
 const useref = require('gulp-useref');
@@ -45,10 +46,15 @@ function cleanBuildJS() {
 }
 
 // HTML tasks
-function userefTask() {
+function templatesTask() {
   return src(config.alltemplates)
-    .pipe(useref())
     .pipe(dest('./_build'));
+}
+
+function userefTask() {
+  return src(config.buildtemplates)
+    .pipe(useref())
+    .pipe(dest(file => file.base));
 }
 
 function injectTask() {
@@ -56,7 +62,7 @@ function injectTask() {
   const sources = src([config.buildjs, config.buildcss], { read: false });
 
   return target
-    .pipe(inject(sources))
+    .pipe(inject(sources, { relative: true }))
     .pipe(dest('./_build'));
 }
 
@@ -68,7 +74,8 @@ function js() {
     }))
     .pipe(uglify())
     .pipe(rename({ extname: '.min.js' }))
-    .pipe(dest('./_build/assets'));
+    .pipe(dest('./_build/assets'))
+    .pipe(browsersync.stream());
 }
 
 // CSS Task
@@ -83,7 +90,8 @@ function css() {
     .pipe(sass().on('error', sass.logError))
     .pipe(postcss(processors))
     .pipe(rename({ extname: '.min.css' }))
-    .pipe(dest('./_build/assets'));
+    .pipe(dest('./_build/assets'))
+    .pipe(browsersync.stream());
 }
 
 function renameSassFolder(done) {
@@ -93,14 +101,35 @@ function renameSassFolder(done) {
   });
 }
 
-function watchFiles() {
-  watch(config.allsass, series(cleanBuildCSS, css, renameSassFolder));
-  watch(config.alljs, series(cleanBuildJS, js));
+// BrowserSync
+function browserSyncTask(done) {
+  browsersync.init({
+    server: {
+      baseDir: './_build/',
+    },
+    port: 3000,
+  });
+  done();
 }
 
-const watchTask = parallel(watchFiles);
+// BrowserSync Reload
+function browserSyncReload(done) {
+  browsersync.reload();
+  done();
+}
+
+function watchFiles() {
+  // JS and CSS Watch
+  watch(config.allsass, series(cleanBuildCSS, css, renameSassFolder));
+  watch(config.alljs, series(cleanBuildJS, js));
+
+  // HTML watch
+  watch(config.alltemplates, series(templatesTask, userefTask, injectTask, browserSyncReload));
+}
+
+const watchTask = parallel(watchFiles, browserSyncTask);
 const cssTask = series(css, renameSassFolder);
-const htmlTask = series(userefTask, injectTask);
+const htmlTask = series(templatesTask, userefTask, injectTask);
 
 exports.html = htmlTask;
 exports.build = parallel(css, js);
