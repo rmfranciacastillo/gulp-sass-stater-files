@@ -7,7 +7,7 @@ const config = {
    * Source Paths
    */
   alljs: `${client}**/*.js`,
-  allsass: `${client}**/*.sass`,
+  allscss: `${client}**/*.scss`,
   alltemplates: `${client}templates/*.html`,
   alltimages: `${client}img/*`,
   alltvideos: `${client}videos/*`,

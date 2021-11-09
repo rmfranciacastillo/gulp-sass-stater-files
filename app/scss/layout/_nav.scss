@@ -1,0 +1,12 @@
+/* ==|====================
+  Layout/Nav
+ ======================= */
+
+.l-nav {
+  &--item {
+    padding: 20px;
+  }
+  &--search {
+    @extend .l-nav--item;
+  }
+}

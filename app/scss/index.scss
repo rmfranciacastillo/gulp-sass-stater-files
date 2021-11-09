@@ -8,31 +8,30 @@
  * Inpiration: https://smacss.com
  */
 
-/* Site Settings */ 
-@import 'utils'
-@import 'vars' 
+/* Site Settings */
+@import 'utils';
+@import 'vars';
 
 /* Base */
-@import 'base' 
+@import 'base';
 
 /*Site Layout*/
-@import 'layout/header'
-@import 'layout/nav'
-@import 'layout/home'
-@import 'layout/main'
-@import 'layout/sidebar'
-@import 'layout/footer'
+@import 'layout/header';
+@import 'layout/nav';
+@import 'layout/home';
+@import 'layout/main';
+@import 'layout/sidebar';
+@import 'layout/footer';
 
 /* Vendor */
 //@import 'vendor/bootstrap'
 //@import 'vendor/foundation'
 
-/* Modules */ 
-@import 'modules'
+/* Modules */
+@import 'modules';
 
 /* Component State */
-@import 'state'
+@import 'state';
 
-/* Theme */ 
-@import 'theme'
-
+/* Theme */
+@import 'theme';

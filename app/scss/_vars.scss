@@ -2,7 +2,7 @@
   VARIABLES 
  ======================= */
 
-@charset "UTF-8"
+@charset "UTF-8";
 
 //---------------------
 // == Site Variables 
@@ -13,19 +13,17 @@
 
 // = Colors
 //---------------------
-$main: #ff6200
-$main-alt: #225470
-$white: #ffffff
-$black: #000000
-$gray: #888888
-$light-gray: #262626
-$red: #fc0303
-$green: #09ff09
+$main: #ff6200;
+$main-alt: #225470;
+$white: #ffffff;
+$black: #000000;
+$gray: #888888;
+$light-gray: #262626;
+$red: #fc0303;
+$green: #09ff09;
 
 // = Grid
 // -----------------------------
 
 // Max width wrapper
 //$wrapper-width: pxtoem(1140, 16)
-
-
