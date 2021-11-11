@@ -6,7 +6,7 @@
   "scripts": {
     "start": "gulp",
     "lint": "eslint gulpfile.js ./app/js/**/*.js",
-		"check-updates": "ncu"
+    "check-updates": "ncu"
   },
   "repository": {
     "type": "git",
