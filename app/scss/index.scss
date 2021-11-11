@@ -1,34 +1,35 @@
 /* 
- * SASS + SMACSS Starter v1.0.0 
+ * SASS + SMACSS Starter v2.1.0 
  * Author: Renato Francia Castillo  
  * Inspired by: Jonathan Path  
  * url: https://github.com/jonathanpath/SASS-SMACSS 
- * Date: 21 September 2017 
+ * Date: 11 November 2021 
  * Style Guide: https://github.com/necolas/idiomatic-css 
  * Inpiration: https://smacss.com
+ *
+ * Order: Base, Layout, Module, State, Theme
  */
 
 /* Site Settings */
-@import 'utils';
+
+// Colors 
 @import 'vars';
 
-/* Base */
-@import 'base';
+// Fonts, breakpoints
+@import 'utils';
 
-/*Site Layout*/
-@import 'layout/header';
-@import 'layout/nav';
-@import 'layout/home';
-@import 'layout/main';
-@import 'layout/sidebar';
-@import 'layout/footer';
+/* Core */
+@import 'core';
 
 /* Vendor */
 //@import 'vendor/bootstrap'
 //@import 'vendor/foundation'
 
+/*Site Layout*/
+@import 'layout';
+
 /* Modules */
-@import 'modules';
+@import 'components';
 
 /* Component State */
 @import 'state';

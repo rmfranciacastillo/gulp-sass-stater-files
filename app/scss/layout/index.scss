@@ -1,0 +1,63 @@
+/* =|=====================
+  LAYOUT 
+ ======================= */
+
+/* divide the page into sections */
+
+@import "footer";
+@import "header";
+@import "home";
+@import "main";
+@import "nav";
+@import "sidebar";
+
+/* Delete This */
+.container {
+  margin: 20px;
+  padding: 15px 0;
+
+  .row {
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+}
+
+.grid-gallery {
+	display: grid;
+}
+
+#article {
+	float: left;
+}
+
+#sidebar {
+	float: right;
+}
+
+.l-flipped #article {
+	float: right;
+}
+
+.l-flipped #sidebar {
+	float: left;
+}
+
+.l-fixed #article {
+width: 600px;
+}
+
+.l-fixed #sidebar {
+width: 200px;
+}
+
+
+.l-grid {
+	margin: 0;
+	padding: 0;
+	list-style-type: none;
+}
+
+.l-grid > li {
+	display: inline-block;
+	margin: 0 0 10px 10px;
+}

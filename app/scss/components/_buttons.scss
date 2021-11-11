@@ -1,0 +1,25 @@
+/* ==|====================
+   Module/ Buttons
+ ======================= */
+
+.btn { }
+
+.btn-main { }
+
+.btn-alt { }
+
+.btn-wide { }
+
+.btn .is-disabed {}
+
+.is-pressed { }
+
+// <button class="btn" data-state="disabled">Disabled</button>
+.btn-[data-state=default] { }
+
+.box { }
+
+.btn {
+	@extend .box;
+	background-color: #0066cc;
+}

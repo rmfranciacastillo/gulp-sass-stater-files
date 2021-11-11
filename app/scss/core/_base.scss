@@ -1,0 +1,23 @@
+/* ==|====================
+  BASE   
+ ======================= */
+
+/* 
+	Defaults. Almost exclusively single elements selectors. 
+*/
+
+@import "vendor/normalize";
+@import "vendor/reset";
+
+html, body, form {
+	margin: 0;
+	padding: 0;
+}
+
+a {
+	color: $black;
+
+	&:hover {
+		color: lighten($black, 30%);
+	}
+}

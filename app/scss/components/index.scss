@@ -1,0 +1,26 @@
+/* =|=====================
+	COMPONENTS
+ ======================= */
+
+/* Modules(Components) are the reusable, modular parts of our design */
+
+@import "buttons";
+
+/* Delete this */
+
+.pod {
+	width: 100%;
+}
+.pod input[type=text] {
+	width: 50%;
+}
+#sidebar .pod input[type=text] {
+	width: 100%;
+}
+.pod-callout {
+	width: 200px;
+}
+#sidebar .pod-callout input[type=text],
+		.pod-callout input[type=text] {
+	width: 180px;
+}

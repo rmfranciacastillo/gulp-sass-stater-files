@@ -1,4 +1,4 @@
-/* =|====================
+/* ======================
   VARIABLES 
  ======================= */
 
@@ -9,7 +9,7 @@
 //---------------------
 
 // Fonts
-//$font1: "Helvetica Neue", Helvetica, Arial, sans-serif
+$font1: "Helvetica Neue", Helvetica, Arial, sans-serif;
 
 // = Colors
 //---------------------
@@ -22,8 +22,17 @@ $light-gray: #262626;
 $red: #fc0303;
 $green: #09ff09;
 
-// = Grid
+// = Breakpoints 
 // -----------------------------
 
-// Max width wrapper
-//$wrapper-width: pxtoem(1140, 16)
+// Small tablets and large smartphones (landscape view)
+$screen-sm-min: 576px;
+
+// Small tablets (portrait view)
+$screen-md-min: 768px;
+
+// Tablets and small desktops
+$screen-lg-min: 992px;
+
+// Large tablets and desktops
+$screen-xl-min: 1200px;

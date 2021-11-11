@@ -73,12 +73,12 @@ function css() {
     cssnano(),
   ];
 
-  return src(config.allscss)
+  return src(config.index_scss)
     .pipe(plumber())
     .pipe(sass().on('error', sass.logError))
     .pipe(postcss(processors))
     .pipe(rename({ extname: '.min.css' }))
-    .pipe(dest('./_build/assets'))
+		.pipe(dest('./_build/assets/scss'))
 	  .pipe(browsersync.stream());
 }
 
@@ -133,4 +133,5 @@ const htmlTask = series(templatesTask, userefTask, injectTask);
 
 exports.html = htmlTask;
 exports.build = parallel(css, js);
+exports.clean = clean;
 exports.default = series(clean, parallel(cssTask, js), htmlTask, watchTask);

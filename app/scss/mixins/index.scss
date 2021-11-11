@@ -1,0 +1,15 @@
+/* =|=====================
+	MIXINS
+ ======================= */
+
+@mixin theme-border {
+	border: 2px solid #039;
+	border-radius: 10px;
+	background-color: #EEE;
+}
+.callout {
+	@include theme-border;
+}
+.summary {
+	@include theme-border;
+}

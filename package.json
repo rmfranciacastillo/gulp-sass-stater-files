@@ -1,6 +1,6 @@
 {
   "name": "basic_sass_setup",
-  "version": "2.0.0",
+  "version": "2.1.0",
   "description": "This is a basic setup for a sass project. This project was only intended for the creation of templates made with simple HTML5, CSS3 and VanillaJS",
   "main": "app/templates/index.html",
   "scripts": {
