@@ -78,8 +78,8 @@ function css() {
     .pipe(sass().on('error', sass.logError))
     .pipe(postcss(processors))
     .pipe(rename({ extname: '.min.css' }))
-    .pipe(dest('./_build/assets'));
-  // .pipe(browsersync.stream());
+    .pipe(dest('./_build/assets'))
+	  .pipe(browsersync.stream());
 }
 
 function renameSassFolder(done) {
